@@ -1,6 +1,6 @@
-# 📘 Praktikum Laravel 1 - Instalasi, Konfigurasi, dan Halaman Pertama  
+# Praktikum Laravel 1 - Instalasi, Konfigurasi, dan Halaman Pertama  
 
-## ✨ Langkah Pengerjaan
+## Langkah Pengerjaan
 
 ### 1. Instalasi Proyek Laravel Baru
 - Pastikan sudah ada **Composer** dan server lokal (Laragon/XAMPP).  
@@ -54,7 +54,7 @@
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/b6739ae0-ee5a-443f-b910-0c2ef2559c3c" />
 
 
-## ✅ Kesimpulan
+## Kesimpulan
 Pada praktikum ini, kita telah berhasil:
 - Menginstal dan menjalankan proyek Laravel baru dari awal.  
 - Menjalankan server development lokal dengan `php artisan serve`.  
