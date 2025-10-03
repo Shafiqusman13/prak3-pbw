@@ -1,115 +1,62 @@
-# LaraPress - Aplikasi Blog Sederhana
+# 📘 Praktikum Laravel 1 - Instalasi, Konfigurasi, dan Halaman Pertama  
 
-LaraPress adalah aplikasi blog sederhana yang dibangun menggunakan Laravel 12 untuk tujuan pembelajaran dan pengembangan keterampilan web development.
+## ✨ Langkah Pengerjaan
 
-[Tampilan Halaman Utama LaraPress]<img width="1920" height="1080" alt="Screenshot 2025-10-03 103630" src="https://github.com/user-attachments/assets/bd717dca-9581-4a92-a823-7564f926623d" />
-*Tampilan halaman utama LaraPress*
+### 1. Instalasi Proyek Laravel Baru
+- Pastikan sudah ada **Composer** dan server lokal (Laragon/XAMPP).  
+- Buka terminal lalu arahkan ke direktori web server, misalnya:
+  ```bash
+  cd C:\laragon\www
+  ```
+- Jalankan perintah instalasi:
+  ```bash
+  composer create-project laravel/laravel LaraPress
+  ```
 
-## 📋 Tentang Proyek
+### 2. Menjalankan Server Development
+- Masuk ke folder proyek:
+  ```bash
+  cd LaraPress
+  ```
+- Jalankan server bawaan Laravel:
+  ```bash
+  php artisan serve
+  ```
+- Akses di browser: [http://127.0.0.1:8000](http://127.0.0.1:8000)
 
-Proyek ini dibuat sebagai bagian dari pembelajaran Laravel framework. LaraPress mendemonstrasikan konsep-konsep dasar Laravel seperti routing, views, dan struktur MVC.
+### 3. Membuat dan Memodifikasi View
+- Buka proyek di VS Code.  
+- Edit file `resources/views/welcome.blade.php` agar menampilkan halaman utama sederhana.  
 
-## 🚀 Fitur yang Sudah Diimplementasikan
+### 4. Menambahkan Halaman "Tentang Kami"
+- Tambahkan route di `routes/web.php`:
+  ```php
+  Route::get('/tentang-kami', function () {
+      return view('about');
+  });
+  ```
+- Buat file `resources/views/about.blade.php` dengan isi HTML tentang LaraPress.  
+- Tambahkan navigasi antar halaman (`welcome` <-> `about`).  
 
-### 1. **Halaman Utama (Welcome Page)**
-   - Mengubah tampilan default Laravel menjadi halaman sederhana
-   - Menampilkan judul "Selamat Datang di LaraPress"
-   - Struktur HTML yang bersih dan minimal
+### 5. Membuat Halaman "Kontak" (Tugas Mandiri)
+- Tambahkan route baru di `routes/web.php`:
+  ```php
+  Route::get('/kontak', function () {
+      return view('kontak');
+  });
+  ```
+- Buat file `resources/views/kontak.blade.php` berisi informasi kontak fiktif (email & nomor telepon).  
+- Tambahkan link navigasi ke halaman lain (`welcome` ↔ `about` ↔ `kontak`).  
 
-### 2. **Halaman Tentang Kami**
-   - Route: `/tentang-kami`
-   - Menampilkan informasi tentang LaraPress
-   - Menjelaskan tujuan proyek sebagai pembelajaran Laravel 12
+---
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/5c539a82-100a-4df0-9af4-e0047a82df79" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/c8755d47-4b98-4fc4-a3cb-fc664fe88896" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/b6739ae0-ee5a-443f-b910-0c2ef2559c3c" />
 
-## 📁 Struktur File yang Dimodifikasi
 
-### File yang Dibuat/Dimodifikasi:
-
-1. **`resources/views/welcome.blade.php`**
-   - Mengubah tampilan default Laravel yang kompleks menjadi struktur HTML sederhana
-   - Menampilkan pesan sambutan untuk pengunjung blog
-
-2. **`resources/views/about.blade.php`** (BARU)
-   - File view baru untuk halaman "Tentang Kami"
-   - Berisi informasi tentang LaraPress sebagai proyek pembelajaran
-
-3. **`routes/web.php`**
-   - Menambahkan route baru `/tentang-kami` yang mengarah ke view `about.blade.php`
-
-## 🛠️ Langkah-langkah Implementasi
-
-### Step 1: Modifikasi Halaman Welcome
-Mengubah file `resources/views/welcome.blade.php` dari tampilan default Laravel (266 baris) menjadi HTML sederhana:
-
-```html
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Selamat Datang di LaraPress</title>
-</head>
-<body>
-    <h1>Selamat Datang di Blog LaraPress</h1>
-    <p>Ini adalah halaman utama dari aplikasi blog kita.</p>
-</body>
-</html>
-```
-
-### Step 2: Membuat Route Baru
-Menambahkan route baru di `routes/web.php`:
-
-```php
-Route::get('/tentang-kami', function () {
-    return view('about');
-});
-```
-
-### Step 3: Membuat View About
-Membuat file baru `resources/views/about.blade.php`:
-
-```html
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tentang Kami - LaraPress</title>
-</head>
-<body>
-    <h1>Tentang LaraPress</h1>
-    <p>LaraPress adalah aplikasi blog sederhana yang dibuat dengan Laravel 12.</p>
-    <p>Proyek ini dibuat untuk tujuan pembelajaran dan pengembangan keterampilan.</p>
-</body>
-</html>
-```
-
-## 🌐 Endpoint yang Tersedia
-
-| Route | Method | Deskripsi |
-|-------|--------|-----------|
-| `/` | GET | Halaman utama LaraPress |
-| `/tentang-kami` | GET | Halaman tentang LaraPress |
-
-## 💻 Teknologi yang Digunakan
-
-- **Framework**: Laravel 12
-- **PHP Version**: 8.x
-- **Database**: SQLite (default)
-- **Frontend**: Blade Template Engine, HTML, CSS
-- **Build Tool**: Vite
-
-## 📸 Screenshot
-
-### Halaman Utama
-[Halaman Utama]<img width="1920" height="1080" alt="Screenshot 2025-10-03 104156" src="https://github.com/user-attachments/assets/f80770a5-312b-4eff-987a-704664144709" />
-Halaman utama menampilkan sambutan sederhana kepada pengunjung blog LaraPress.
-
-### Kesimpulan
-Pada praktikum ini kita telah:
- - Menginstal proyek Laravel baru menggunakan Composer.
- - Menjalankan server lokal dengan perintah php artisan serve.
- - Mengenal struktur folder dasar Laravel, terutama routes/web.php untuk rute dan resources/views/ untuk tampilan.
- - Membuat halaman statis dengan cara mendefinisikan route di web.php dan membuat file view (Blade).
- - Menghubungkan antar halaman dengan menambahkan link navigasi.
- - Menerapkan siklus kerja dasar Laravel yaitu Request → Route → View → Response.
+## ✅ Kesimpulan
+Pada praktikum ini, kita telah berhasil:
+- Menginstal dan menjalankan proyek Laravel baru dari awal.  
+- Menjalankan server development lokal dengan `php artisan serve`.  
+- Memahami alur dasar Laravel: **Request → Route → View → Response**.  
+- Membuat halaman statis sederhana (`welcome`, `tentang kami`, dan `kontak`) serta menghubungkannya dengan navigasi.  
